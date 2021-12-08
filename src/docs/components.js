@@ -127,6 +127,46 @@ module.exports = {
               },
             },
           },
+          newLibro: {
+            type: "object", // data type
+            properties: {
+              id: {
+                type: "number", // data-type
+                description: "Libro identification number", // desc
+                example: "20", // example of an id
+              },
+              author: {
+                type: "string", // data-type
+                description: "Author of the Book", // desc
+                example: "J.K. Rowling", // example of an id
+              },
+              titulo: {
+                type: "string", // data-type
+                description: "Title's Book", // desc
+                example: "Harry Potter", // example of a title
+              },
+              pictureUrl: {
+                type: "string", // data-type
+                description: "Book cover", // desc
+                example: "https://cdn.culturagenial.com/es/imagenes/harry-potter-libros-1-cke.jpg", // example of a title
+              },
+              created: {
+                type: "date", // data type
+                description: "Date created", // desc
+                example: "06/12/2021", // example of a completed value
+              },
+              updated: {
+                type: "date", // data type
+                description: "Date updated", // desc
+                example: "07/12/2021", // example of a completed value
+              },
+              sinopsis: {
+                type: "string", // data type
+                description: "Sinopsis of the book", // desc
+                example: "Harry Potter by someone", // example of a completed value
+              },
+            },
+          },
           // error model
           Error: {
             type: "object", //data type

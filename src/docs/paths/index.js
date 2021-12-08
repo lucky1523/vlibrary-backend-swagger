@@ -9,6 +9,7 @@ const createLogin = require('./create-login');
 const createRegister = require('./create-register');
 const getLibroId = require('./get-libro-id');
 const getBoleta = require('./get-boleta');
+const updateLibro = require('./update-libro');
 
 
 module.exports = {
@@ -31,6 +32,9 @@ module.exports = {
         },
         '/libros':{
             ...getLibros
+        },
+        '/newLibro':{
+            ...updateLibro
         },
         '/libros/{id}':{
             ...getLibroId
