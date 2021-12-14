@@ -8,7 +8,7 @@ const Libro = function(libro) {
   this.foto_url=libro.foto_url;
   this.sinopsis=libro.sinopsis;
   this.estado=libro.estado;
-  this.reservado=libro.reservado
+  this.reservado=libro.reservado;
   this.created=libro.created;
   this.updated=libro.updated;
 

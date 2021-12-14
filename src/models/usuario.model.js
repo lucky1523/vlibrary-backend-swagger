@@ -53,7 +53,7 @@ Usuario.findOne = (login, result) => {
             }
             console.log("usuarios: ", res[0]);
             // console.log("updated user: ", { id: id_usuario, ...login });
-            result(null, { id: res[0].Id_usuario, ...login });
+            result(null, res[0]);
           }
         );
        
