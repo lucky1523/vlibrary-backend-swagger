@@ -8,6 +8,10 @@ const Administrador =  function(administrador){
     this.updated=administrador.updated;
 }; 
 
+class validationError extends Error{
+  constructor (message){super(message) , this.name="validationError"};
+};
+
 Administrador.create = (newAdmi, result) => {
     sql.query("INSERT INTO Administrador SET ?", newAdmi, (err, res) => {
       if (err) {
@@ -20,4 +24,25 @@ Administrador.create = (newAdmi, result) => {
       result(null, { id: res.insertId, ...newAdmi });
     });
   };
+
+  Administrador.findOne = (id, result) => {
+    sql.query("SELECT Id_persona,Id_admi,Codigo_admi,Id_usuario,Nombre,Profesion FROM Administrador inner join persona using (id_persona) where id_usuario= ?", id, (err, res) => {
+        if (err) {
+          console.log("error: ", err);
+          result(err, null);
+          return;
+        }
+       
+        if(res[0]){ 
+          console.log("usuario admi: ", res[0]);
+          result(null, res);
+        }else {
+          
+          result( new validationError("Usuario administrador no encontrado "), null);
+          return;
+        }
+      }
+    );
+  };
+
   module.exports = Administrador;

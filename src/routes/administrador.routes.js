@@ -5,6 +5,8 @@ module.exports = app => {
   
     // Create a new Book ...
     router.post("/create", administrador.create);
+
+    router.get("/:id", administrador.findAdmi);
   
     app.use('/api/administrador', router);
   };

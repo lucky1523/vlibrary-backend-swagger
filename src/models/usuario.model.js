@@ -66,4 +66,23 @@ Usuario.findOne = (login, result) => {
   );
 };
 
+Usuario.remove = (id, result) => {
+  sql.query("DELETE FROM Usuario WHERE id_usuario = ?", id, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    if (res.affectedRows == 0) {
+      // not found book with the id
+      result({ kind: "not_found" }, null);
+      return;
+    }
+
+    console.log("deleted usuario with id: ", id);
+    result(null, res);
+  });
+};
+
 module.exports = Usuario;

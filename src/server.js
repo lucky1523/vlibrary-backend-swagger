@@ -31,6 +31,8 @@ require("./routes/usuario.routes.js")(app);
 require("./routes/reservacion.routes.js")(app);
 require("./routes/persona.routes.js")(app);
 require("./routes/administrador.routes.js")(app);
+require("./routes/video.routes.js")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

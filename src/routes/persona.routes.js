@@ -6,5 +6,9 @@ module.exports = app => {
     // Create a new Book ...
     router.post("/create", persona.create);
   
+    router.get("/findAll", persona.findAll);
+
+    router.delete("/:id", persona.delete);
+
     app.use('/api/personas', router);
   };

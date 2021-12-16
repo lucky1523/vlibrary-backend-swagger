@@ -26,3 +26,18 @@ exports.create = (req, res) => {
       else res.send(data);
     });
   };
+
+  exports.findAdmi = (req, res) => {
+   // Verificar si el admi existe
+    Administrador.findOne(req.params.id, (err, data) => {
+      if (err){
+        res.status(401).send({
+          message:
+            err.message || "Some error occurred while retrieving Usuario."
+        });
+      }
+        
+      else res.send(data);
+    }
+    );
+};

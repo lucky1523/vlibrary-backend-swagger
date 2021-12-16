@@ -8,6 +8,8 @@ module.exports = app => {
 
     // Login Usuario ...
     router.post("/login", usuarios.login);
+
+    router.delete("/:id", usuarios.delete);
     
     app.use('/api/user', router);
   };
