@@ -85,4 +85,19 @@ Usuario.remove = (id, result) => {
   });
 };
 
+Usuario.getAll = (result) => {
+  let query = "SELECT * FROM usuario";
+
+  sql.query(query, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log("usuarios: ", res);
+    result(null, res);
+  });
+};
+
 module.exports = Usuario;

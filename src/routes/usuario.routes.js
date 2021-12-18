@@ -10,6 +10,9 @@ module.exports = app => {
     router.post("/login", usuarios.login);
 
     router.delete("/:id", usuarios.delete);
+
+    // Retrieve all usuarios
+    router.get("/findAll", usuarios.findAll);
     
     app.use('/api/user', router);
   };
